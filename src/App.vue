@@ -3,15 +3,20 @@
     <main>
       <v-navigation-drawer v-model="sideNav">
         <v-list>
-          <v-list-title>
-          </v-list-title>
+          <v-list-tile>
+            <v-list-tile-action>
+              <v-icon>chrome_reader_mode</v-icon>>
+            </v-list-tile-action>
+            <v-list-tile-content>View Meetups</v-list-tile-content>
+          </v-list-tile>
         </v-list>
       </v-navigation-drawer>
+
       <v-toolbar>
-        <v-toolbar-side-icon @click.native.stop="sideNav = !sideNav"></v-toolbar-side-icon>
+        <v-toolbar-side-icon @click.native.stop="sideNav = !sideNav" class="hidden-sm-and-up"></v-toolbar-side-icon>
         <v-toolbar-title>MeetupV</v-toolbar-title>
         <v-spacer></v-spacer>
-        <v-toolbar-items>
+        <v-toolbar-items class="hidden-xs-only">
           <v-btn flat>
             <v-icon>chrome_reader_mode</v-icon>
             View Meetups
