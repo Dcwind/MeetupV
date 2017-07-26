@@ -6,7 +6,13 @@
           MeetupV
         </v-toolbar-title>
         <v-spacer></v-spacer>
-        <v-btn></v-btn>
+        <v-toolbar-items>
+          <v-btn flat>
+            <v-icon>chrome_reader_mode</v-icon>
+            View Meetups
+          </v-btn>
+        </v-toolbar-items>
+        
       </v-toolbar>
     </main>
   </v-app>
