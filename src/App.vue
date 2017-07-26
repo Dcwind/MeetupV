@@ -5,7 +5,7 @@
         <v-list>
           <v-list-tile>
             <v-list-tile-action>
-              <v-icon>chrome_reader_mode</v-icon>>
+              <v-icon>chrome_reader_mode</v-icon>
             </v-list-tile-action>
             <v-list-tile-content>View Meetups</v-list-tile-content>
           </v-list-tile>
@@ -18,7 +18,7 @@
         <v-spacer></v-spacer>
         <v-toolbar-items class="hidden-xs-only">
           <v-btn flat>
-            <v-icon>chrome_reader_mode</v-icon>
+            <v-icon left>chrome_reader_mode</v-icon>
             View Meetups
           </v-btn>
         </v-toolbar-items>  
@@ -31,7 +31,7 @@
   export default {
     data () {
       return {
-        sideNav: false,
+        sideNav: false
       }
     }
   }
