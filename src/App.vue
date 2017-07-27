@@ -1,6 +1,5 @@
 <template>
   <v-app >
-    <main>
       <v-navigation-drawer v-model="sideNav">
         <v-list>
           <v-list-tile v-for="item in menuItems" :key="item.title">
@@ -23,6 +22,9 @@
           </v-btn>
         </v-toolbar-items>  
       </v-toolbar>
+
+    <main>
+      <!-- <router-view></router-view> -->
     </main>
   </v-app>
 </template>
@@ -33,11 +35,11 @@
       return {
         sideNav: false,
         menuItems: [
-          { icon:'chrome_reader_mode' , title:'View Meetups' },
-          { icon:'room' , title:'Organize Meetups' },
-          { icon:'person' , title:'Profile' },
-          { icon:'face' , title:'Sign up' },
-          { icon:'lock_open' , title:'Sign in' }
+          { icon: 'chrome_reader_mode', title: 'View Meetups' },
+          { icon: 'room', title: 'Organize Meetups' },
+          { icon: 'person', title: 'Profile' },
+          { icon: 'face', title: 'Sign up' },
+          { icon: 'lock_open', title: 'Sign in' }
         ]
       }
     }
