@@ -17,9 +17,9 @@
         <v-toolbar-title>MeetupV</v-toolbar-title>
         <v-spacer></v-spacer>
         <v-toolbar-items class="hidden-xs-only">
-          <v-btn flat>
-            <v-icon left>chrome_reader_mode</v-icon>
-            View Meetups
+          <v-btn flat v-for="item in menuItems" :key="item.title">
+            <v-icon left>{{item.icon}}</v-icon>
+            {{item.title}}
           </v-btn>
         </v-toolbar-items>  
       </v-toolbar>
