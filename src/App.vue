@@ -3,11 +3,11 @@
     <main>
       <v-navigation-drawer v-model="sideNav">
         <v-list>
-          <v-list-tile>
+          <v-list-tile v-for="item in menuItems" :key="item.title">
             <v-list-tile-action>
-              <v-icon>chrome_reader_mode</v-icon>
+              <v-icon>{{item.icon}}</v-icon>
             </v-list-tile-action>
-            <v-list-tile-content>View Meetups</v-list-tile-content>
+            <v-list-tile-content>{{item.title}}</v-list-tile-content>
           </v-list-tile>
         </v-list>
       </v-navigation-drawer>
@@ -31,7 +31,14 @@
   export default {
     data () {
       return {
-        sideNav: false
+        sideNav: false,
+        menuItems: [
+          { icon:'chrome_reader_mode' , title:'View Meetups' },
+          { icon:'room' , title:'Organize Meetups' },
+          { icon:'person' , title:'Profile' },
+          { icon:'face' , title:'Sign up' },
+          { icon:'lock_open' , title:'Sign in' }
+        ]
       }
     }
   }
