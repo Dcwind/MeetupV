@@ -24,7 +24,7 @@
       </v-toolbar>
 
     <main>
-      <!-- <router-view></router-view> -->
+      <router-view></router-view>
     </main>
   </v-app>
 </template>
