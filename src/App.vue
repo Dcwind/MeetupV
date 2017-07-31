@@ -35,11 +35,11 @@
       return {
         sideNav: false,
         menuItems: [
-          { icon: 'chrome_reader_mode', title: 'View Meetups' },
-          { icon: 'room', title: 'Organize Meetups' },
-          { icon: 'person', title: 'Profile' },
-          { icon: 'face', title: 'Sign up' },
-          { icon: 'lock_open', title: 'Sign in' }
+          { icon: 'chrome_reader_mode', title: 'View Meetups', link: '/meetups' },
+          { icon: 'room', title: 'Organize Meetups', link: '/meetup/createnew' },
+          { icon: 'person', title: 'Profile', link: '/profile' },
+          { icon: 'face', title: 'Sign up', link: '/signup' },
+          { icon: 'lock_open', title: 'Sign in', link: 'signin' }
         ]
       }
     }
