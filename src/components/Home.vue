@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <p>The home page</p>
-    </div>
+   <v-container>
+       
+   </v-container>
 </template>
 
