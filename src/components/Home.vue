@@ -12,8 +12,11 @@
          <v-flex xs12>
            <v-carousel>
               <v-carousel-item v-for="meetup in meetups" 
-              v-bind:src="meetup.imageUrl" 
+              :src="meetup.imageUrl" 
               :key="meetup.id"></v-carousel-item>
+              <div class="title">
+                {{ meetup.title }}
+              </div>
            </v-carousel>
          </v-flex>
        </v-layout>
@@ -21,7 +24,7 @@
 </template>
 
 <script>
-    export defualt {
+    export default {
         data(){
             return {
                 meetups: [
@@ -34,3 +37,9 @@
         }
     }
 </script>
+
+<style scoped>
+.title {
+
+}
+</style>
