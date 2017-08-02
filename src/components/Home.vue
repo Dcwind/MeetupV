@@ -2,10 +2,10 @@
    <v-container>
        <v-layout wrap row>
            <v-flex xs12 sm6 class="text-xs-center text-sm-right">
-               <v-btn large router to="/meetups">View Meetups</v-btn>
+               <v-btn large  to="/meetups">View Meetups</v-btn>
            </v-flex>
            <v-flex xs12 sm6 class="text-xs-center text-sm-left">
-               <v-btn large router to="/meetup/createnew">Organize Meetup</v-btn>
+               <v-btn large to="/meetup/createnew">Organize Meetup</v-btn>
            </v-flex>
        </v-layout>
        <v-layout row wrap class="mt-2">
