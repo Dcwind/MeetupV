@@ -14,10 +14,12 @@
               <v-carousel-item 
               v-for="meetup in meetups" 
               :src="meetup.imageUrl" 
-              :key="meetup.id"></v-carousel-item>
+              :key="meetup.id">
               <div class="title">
                 {{ meetup.title  }}  
               </div>
+              </v-carousel-item>
+              
            </v-carousel>
          </v-flex>
        </v-layout>
