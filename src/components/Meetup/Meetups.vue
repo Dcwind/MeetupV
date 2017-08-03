@@ -10,6 +10,14 @@
                                 height="130px">
                             </v-card-media>
                         </v-flex>
+                        <v-flex xs7 sm8 md9>
+                            <v-card-title primary-title>
+                                <div>
+                                    <h5 >Bangkok Meetup</h5>
+                                    <div>27th August 2018</div>
+                                </div>
+                            </v-card-title>
+                        </v-flex>
                     </v-layout>
                 </v-container>
             </v-card>
