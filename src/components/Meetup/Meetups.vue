@@ -1,5 +1,4 @@
 <template>
-    <div>
-        <p>The Meetups page</p>
-    </div>
+   <v-container>
+   </v-container>
 </template>
