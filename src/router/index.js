@@ -27,6 +27,11 @@ export default new Router({
       component: CreateMeetup
     },
     {
+      path: '/meetup/:id',
+      name: 'meetup',
+      component: Meetup
+    },
+    {
       path: '/profile',
       name: 'Profile',
       component: Profile
