@@ -13,10 +13,16 @@
                         <v-flex xs7 sm8 md9>
                             <v-card-title primary-title>
                                 <div>
-                                    <h5 >Bangkok Meetup</h5>
-                                    <div>27th August 2018</div>
+                                    <h5 class="mb-0">Bangkok Meetup</h5>
+                                    <div >27th August 2018</div>
                                 </div>
                             </v-card-title>
+                            <v-card-actions>
+                                <v-btn>
+                                <v-icon left>arrow_forward</v-icon>
+                                View Meetup
+                                </v-btn>
+                            </v-card-actions>
                         </v-flex>
                     </v-layout>
                 </v-container>
