@@ -5,8 +5,8 @@
             <v-card>
                 <v-container fluid>
                     <v-layout row>
-                            <v-flex xs5 sm4 md3>
-                                <v-card-media src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Bangkok_skytrain_sunset.jpg" 
+                        <v-flex xs5 sm4 md3>
+                            <v-card-media src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Bangkok_skytrain_sunset.jpg" 
                                 height="130px">
                             </v-card-media>
                         </v-flex>
@@ -18,7 +18,7 @@
                                 </div>
                             </v-card-title>
                             <v-card-actions>
-                                <v-btn>
+                                <v-btn to="/meetup/1"> 
                                 <v-icon left>arrow_forward</v-icon>
                                 View Meetup
                                 </v-btn>
