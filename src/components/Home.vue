@@ -10,11 +10,12 @@
        </v-layout>
        <v-layout row wrap class="mt-2">
          <v-flex xs12>
-           <v-carousel>
+           <v-carousel style="cursor: pointer">
               <v-carousel-item 
                 v-for="meetup in meetups" 
                 :src="meetup.imageUrl" 
-                :key="meetup.id">
+                :key="meetup.id"
+                @click="onLoadMeetup(meetup.id)">
 
                 <div class="title">
                     {{ meetup.title  }}  
@@ -39,6 +40,11 @@
           {imageUrl: 'http://dailysignal.com/wp-content/uploads/150904_CaliforniaMigration_Johnson-1250x650.jpg', id: 'dfkjdfkjdkj', title: 'Meetup in Cali'},
           {imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f6/Bangkok_skytrain_sunset.jpg', id: 'sfdvfger3geg', title: 'Meetup in Bangkok'}
         ]
+      }
+    },
+    methods: {
+      onLoadMeetup (id) {
+        this.$router.push('meetup/' + id)
       }
     }
   }
