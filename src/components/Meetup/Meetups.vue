@@ -31,3 +31,13 @@
     </v-layout>
    </v-container>
 </template>
+
+<script>
+   export default {
+     computed: {
+       meetups () {
+         return this.$store.getters.loadedMeetups
+       }
+     }
+   }
+</script>
