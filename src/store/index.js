@@ -29,7 +29,16 @@ export const store = new Vuex.Store({
   actions: {},
   getters: {
     loadedMeetups (state) {
-        return state.loadedMeetups
+      return state.loadedMeetups.sort((meetupA, meetupB) => {
+        return meetupA.date > meetupB.date
+      })
+    },
+    loadedMeetup (state) {
+      return (meetupId) => {
+        return state.loadedMeetups.find((meetup) => {
+          return meetup.id === meetupId
+        })
+      }
     }
   }
 })
