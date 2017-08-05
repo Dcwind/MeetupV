@@ -33,6 +33,9 @@ export const store = new Vuex.Store({
         return meetupA.date > meetupB.date
       })
     },
+    featuredMeetups (state, getters) {
+      return getters.loadedMeetups.slice(0, 5)
+    },
     loadedMeetup (state) {
       return (meetupId) => {
         return state.loadedMeetups.find((meetup) => {
