@@ -34,12 +34,9 @@
 
 <script>
   export default {
-    data () {
-      return {
-        meetups: [
-          {imageUrl: 'http://dailysignal.com/wp-content/uploads/150904_CaliforniaMigration_Johnson-1250x650.jpg', id: 'dfkjdfkjdkj', title: 'Meetup in Cali'},
-          {imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f6/Bangkok_skytrain_sunset.jpg', id: 'sfdvfger3geg', title: 'Meetup in Bangkok'}
-        ]
+    computed: {
+      meetups () {
+        return this.$store.getters.featuredMeetups
       }
     },
     methods: {
