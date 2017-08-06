@@ -5,10 +5,10 @@
                 <h4>Create a new meetup</h4>
             </v-flex>
         </v-layout>
-        <v-layout row>
+        <v-layout row >
             <v-flex xs12>
                 <form>
-                    <v-layout row>
+                    <v-layout row > 
                         <v-flex xs12 sm6 offset-sm3>
                             <v-text-field 
                             name="title"
@@ -29,9 +29,24 @@
                     <v-layout row>
                         <v-flex xs12 sm6 offset-sm3>
                             <v-text-field 
-                            name="image"
+                            name="imageUrl"
                             label="Image Url"
                             id="image-url"
+                            required></v-text-field>
+                        </v-flex>
+                    </v-layout>
+                    <v-layout row>
+                        <v-flex xs12 sm6 offset-sm3>
+                          <img :src="imageUrl" >
+                        </v-flex>
+                    </v-layout>
+                    <v-layout row>
+                        <v-flex xs12 sm6 offset-sm3>
+                            <v-text-field 
+                            name="description"
+                            label="Description"
+                            id="description"
+                            multi-line
                             required></v-text-field>
                         </v-flex>
                     </v-layout>
@@ -40,3 +55,5 @@
         </v-layout>
     </v-container>
 </template>
+
+
