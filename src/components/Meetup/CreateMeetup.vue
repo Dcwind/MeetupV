@@ -17,6 +17,24 @@
                             required></v-text-field>
                         </v-flex>
                     </v-layout>
+                    <v-layout row>
+                        <v-flex xs12 sm6 offset-sm3>
+                            <v-text-field 
+                            name="location"
+                            label="Location"
+                            id="location"
+                            required></v-text-field>
+                        </v-flex>
+                    </v-layout>
+                    <v-layout row>
+                        <v-flex xs12 sm6 offset-sm3>
+                            <v-text-field 
+                            name="image"
+                            label="Image Url"
+                            id="image-url"
+                            required></v-text-field>
+                        </v-flex>
+                    </v-layout>
                 </form>
             </v-flex>
         </v-layout>
