@@ -83,14 +83,17 @@
    },
    methods: {
      onCreateMeetup () {
-         const meetupData = {
-             title: this.title,
-             location: this.location,
-             description: this.description,
-             imageUrl: this.imageUrl,
-             date: new Date()
-         }
-         this.$store.dispatch('createMeetup', meetupData)
+       if (!this.formIsValid) {
+       }
+       const meetupData = {
+         title: this.title,
+         location: this.location,
+         description: this.description,
+         imageUrl: this.imageUrl,
+         date: new Date()
+       }
+       this.$store.dispatch('createMeetup', meetupData)
+       this.$router.push('/meetups')
      }
    }
  }
