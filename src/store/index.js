@@ -25,7 +25,11 @@ export const store = new Vuex.Store({
       ]
     }
   },
-  mutations: {},
+  mutations: {
+    createMeetup (state, payload) {
+      state.loadedMeetups.push(payload)
+    }
+  },
   actions: {},
   getters: {
     loadedMeetups (state) {
