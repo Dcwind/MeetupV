@@ -6,11 +6,15 @@
             </v-flex>
         </v-layout>
         <v-layout row>
-            <v-flex xs12 >
+            <v-flex xs12>
                 <form>
-                    <v-layout>
+                    <v-layout row>
                         <v-flex xs12 sm6 offset-sm3>
-
+                            <v-text-field 
+                            name="title"
+                            label="Title"
+                            id="title"
+                            required></v-text-field>
                         </v-flex>
                     </v-layout>
                 </form>
