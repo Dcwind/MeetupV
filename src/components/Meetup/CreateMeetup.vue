@@ -84,6 +84,7 @@
    methods: {
      onCreateMeetup () {
        if (!this.formIsValid) {
+         return
        }
        const meetupData = {
          title: this.title,
