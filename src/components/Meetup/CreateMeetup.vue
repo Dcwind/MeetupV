@@ -7,7 +7,7 @@
         </v-layout>
         <v-layout row >
             <v-flex xs12>
-                <form>
+                <form @submit.prevent="onCreateMeetup">
                     <v-layout row > 
                         <v-flex xs12 sm6 offset-sm3>
                             <v-text-field 
@@ -56,7 +56,8 @@
                     </v-layout>
                      <v-layout row>
                         <v-flex xs12 sm6 offset-sm3>
-                            <v-btn :disabled="!formIsValid">create Meetup</v-btn>
+                            <v-btn :disabled="!formIsValid"
+                            type="submit">create Meetup</v-btn>
                         </v-flex>
                     </v-layout>
                 </form>
@@ -78,6 +79,18 @@
    computed: {
      formIsValid () {
        return this.title !== '' && this.location !== '' && this.description !== '' && this.imageUrl !== ''
+     }
+   },
+   methods: {
+     onCreateMeetup () {
+         const meetupData = {
+             title: this.title,
+             location: this.location,
+             description: this.description,
+             imageUrl: this.imageUrl,
+             date: new Date()
+         }
+         this.$store.dispatch('createMeetup', meetupData)
      }
    }
  }
