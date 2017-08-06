@@ -14,7 +14,8 @@
                             name="title"
                             label="Title"
                             id="title"
-                            required></v-text-field>
+                            required
+                            v-model="title"></v-text-field>
                         </v-flex>
                     </v-layout>
                     <v-layout row>
@@ -23,7 +24,8 @@
                             name="location"
                             label="Location"
                             id="location"
-                            required></v-text-field>
+                            required
+                            v-model="location"></v-text-field>
                         </v-flex>
                     </v-layout>
                     <v-layout row>
@@ -32,7 +34,8 @@
                             name="imageUrl"
                             label="Image Url"
                             id="image-url"
-                            required></v-text-field>
+                            required
+                            v-model="imageUrl"></v-text-field>
                         </v-flex>
                     </v-layout>
                     <v-layout row>
@@ -47,7 +50,13 @@
                             label="Description"
                             id="description"
                             multi-line
-                            required></v-text-field>
+                            required
+                            v-model="description"></v-text-field>
+                        </v-flex>
+                    </v-layout>
+                     <v-layout row>
+                        <v-flex xs12 sm6 offset-sm3>
+                            <v-btn :disabled="!formIsValid">create Meetup</v-btn>
                         </v-flex>
                     </v-layout>
                 </form>
@@ -56,4 +65,20 @@
     </v-container>
 </template>
 
-
+<script>
+ export default {
+   data () {
+     return {
+       title: '',
+       location: '',
+       description: '',
+       imageUrl: ''
+     }
+   },
+   computed: {
+     formIsValid () {
+       return this.title !== '' && this.location !== '' && this.description !== '' && this.imageUrl !== ''
+     }
+   }
+ }
+</script>
