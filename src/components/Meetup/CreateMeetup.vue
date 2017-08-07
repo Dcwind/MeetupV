@@ -54,6 +54,14 @@
                             v-model="description"></v-text-field>
                         </v-flex>
                     </v-layout>
+                    <v-layout row>
+                        <v-flex xs12 lg6>
+                            <v-date-picker ></v-date-picker>
+                        </v-flex>
+                        <v-flex xs12 lg6>
+                            <v-time-picker ></v-time-picker>
+                        </v-flex>
+                    </v-layout>
                      <v-layout row>
                         <v-flex xs12 sm6 offset-sm3>
                             <v-btn :disabled="!formIsValid"
