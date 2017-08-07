@@ -77,7 +77,6 @@
                         <v-flex xs12 >
                             <v-btn :disabled="!formIsValid"
                             type="submit">create Meetup</v-btn>
-                            {{ dateTime }}
                         </v-flex>
                     </v-layout>
                 </form>
