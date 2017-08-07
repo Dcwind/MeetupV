@@ -6,10 +6,10 @@
             </v-flex>
         </v-layout>
         <v-layout row >
-            <v-flex xs12>
+            <v-flex xs12 sm6 offset-sm3>
                 <form @submit.prevent="onCreateMeetup">
                     <v-layout row > 
-                        <v-flex xs12 sm6 offset-sm3>
+                        <v-flex xs12 >
                             <v-text-field 
                             name="title"
                             label="Title"
@@ -19,7 +19,7 @@
                         </v-flex>
                     </v-layout>
                     <v-layout row>
-                        <v-flex xs12 sm6 offset-sm3>
+                        <v-flex xs12 >
                             <v-text-field 
                             name="location"
                             label="Location"
@@ -29,7 +29,7 @@
                         </v-flex>
                     </v-layout>
                     <v-layout row>
-                        <v-flex xs12 sm6 offset-sm3>
+                        <v-flex xs12 >
                             <v-text-field 
                             name="imageUrl"
                             label="Image Url"
@@ -39,12 +39,12 @@
                         </v-flex>
                     </v-layout>
                     <v-layout row>
-                        <v-flex xs12 sm6 offset-sm3>
+                        <v-flex xs12 >
                           <img :src="imageUrl" height="150">
                         </v-flex>
                     </v-layout>
                     <v-layout row>
-                        <v-flex xs12 sm6 offset-sm3>
+                        <v-flex xs12 >
                             <v-text-field 
                             name="description"
                             label="Description"
@@ -55,15 +55,24 @@
                         </v-flex>
                     </v-layout>
                     <v-layout row>
-                        <v-flex xs12 lg6>
-                            <v-date-picker ></v-date-picker>
-                        </v-flex>
-                        <v-flex xs12 lg6>
-                            <v-time-picker ></v-time-picker>
-                        </v-flex>
+                        <v-flex xs12 >
+                            <h4>Choose a Date and time.</h4>
+                        </v-flex>   
+                    </v-layout>
+                    <v-layout row>
+                        <v-flex xs12 >
+                            <v-layout row wrap>
+                                <v-flex xs12 sm5>
+                                  <v-date-picker v-model="date"></v-date-picker>
+                                </v-flex>
+                                <v-flex xs12 sm5 offset-sm2>
+                                  <v-time-picker v-model="time"></v-time-picker>
+                                </v-flex>
+                            </v-layout>
+                        </v-flex>   
                     </v-layout>
                      <v-layout row>
-                        <v-flex xs12 sm6 offset-sm3>
+                        <v-flex xs12 >
                             <v-btn :disabled="!formIsValid"
                             type="submit">create Meetup</v-btn>
                         </v-flex>
@@ -81,7 +90,9 @@
        title: '',
        location: '',
        description: '',
-       imageUrl: ''
+       imageUrl: '',
+       date: new Date(),
+       time: new Date()
      }
    },
    computed: {
