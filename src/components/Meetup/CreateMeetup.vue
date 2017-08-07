@@ -1,12 +1,12 @@
 <template>
     <v-container>
         <v-layout row>
-            <v-flex xs12 sm6 offset-sm3>
+            <v-flex xs12 sm8 offset-sm2>
                 <h4>Create a new meetup</h4>
             </v-flex>
         </v-layout>
         <v-layout row >
-            <v-flex xs12 sm6 offset-sm3>
+            <v-flex xs12 sm8 offset-sm2>
                 <form @submit.prevent="onCreateMeetup">
                     <v-layout row > 
                         <v-flex xs12 >
@@ -64,9 +64,11 @@
                             <v-layout row wrap>
                                 <v-flex xs12 sm5>
                                   <v-date-picker v-model="date"></v-date-picker>
+                                  <p>{{ date }}</p>
                                 </v-flex>
-                                <v-flex xs12 sm5 offset-sm2>
+                                <v-flex xs12 sm5 offset-sm1>
                                   <v-time-picker v-model="time"></v-time-picker>
+                                  <p>{{ time }}</p>
                                 </v-flex>
                             </v-layout>
                         </v-flex>   
