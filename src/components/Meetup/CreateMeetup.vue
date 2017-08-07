@@ -77,6 +77,7 @@
                         <v-flex xs12 >
                             <v-btn :disabled="!formIsValid"
                             type="submit">create Meetup</v-btn>
+                            {{ dateTime }}
                         </v-flex>
                     </v-layout>
                 </form>
@@ -100,6 +101,22 @@
    computed: {
      formIsValid () {
        return this.title !== '' && this.location !== '' && this.description !== '' && this.imageUrl !== ''
+     },
+     dateTime () {
+       const date = new Date(this.date)
+
+       if (typeof this.time === 'string') {
+         const hours = this.time.match(/^(\d+)/)[1]
+         const minutes = this.time.match(/:(\d+)/)[1]
+
+         date.setHours(hours)
+         date.setMinutes(minutes)
+       } else {
+         date.setHours(this.time.getHours())
+         date.setMinutes(this.time.getMinutes())
+       }
+       console.log(date)
+       return date
      }
    },
    methods: {
@@ -112,7 +129,7 @@
          location: this.location,
          description: this.description,
          imageUrl: this.imageUrl,
-         date: new Date()
+         date: this.dateTime
        }
        this.$store.dispatch('createMeetup', meetupData)
        this.$router.push('/meetups')
