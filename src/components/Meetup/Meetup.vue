@@ -8,7 +8,7 @@
                      height="400px">
                     </v-card-media>
                     <v-card-text>
-                    <div class="info--text">{{meetup.date}} - {{meetup.location}}</div>
+                    <div class="info--text">{{meetup.date | date}} - {{meetup.location}}</div>
                     <div>{{meetup.description}}
                      </div>
                     </v-card-text>
