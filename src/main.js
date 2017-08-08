@@ -19,7 +19,11 @@ new Vue({
   render: h => h(App),
   created () {
     firebase.initializeApp({
-
+      apiKey: 'AIzaSyAHkGZBtKRtjhlbHmRcXlzwh2JzHOpLyRc',
+      authDomain: 'meetupv-8ada7.firebaseapp.com',
+      databaseURL: 'https://meetupv-8ada7.firebaseio.com',
+      projectId: 'meetupv-8ada7',
+      storageBucket: 'meetupv-8ada7.appspot.com'
     })
   }
 })
