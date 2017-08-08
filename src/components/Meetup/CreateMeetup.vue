@@ -64,11 +64,9 @@
                             <v-layout row wrap>
                                 <v-flex xs12 sm5>
                                   <v-date-picker v-model="date"></v-date-picker>
-                                  <p>{{ date }}</p>
                                 </v-flex>
                                 <v-flex xs12 sm5 offset-sm1>
                                   <v-time-picker v-model="time"></v-time-picker>
-                                  <p>{{ time }}</p>
                                 </v-flex>
                             </v-layout>
                         </v-flex>   
