@@ -37,7 +37,8 @@
                                       label="comfirm Password"
                                       id="comfirmPassword"
                                       type="password"
-                                      v-model="comfirmPassword">
+                                      v-model="comfirmPassword"
+                                      :rules="[comparePassword]">
                                       </v-text-field>
                                   </v-flex>
                               </v-layout>
@@ -57,13 +58,22 @@
 
 <script>
 export default {
-    data () {
-      return {
-        email: '',
-        password: '',
-        comfirmPassword: ''
-      }
-      
+  data () {
+    return {
+      email: '',
+      password: '',
+      comfirmPassword: ''
     }
+  },
+  computed: {
+    comparePassword () {
+      return this.password !== this.comfirmPassword ? 'Passwords do not match' : ''
+    }
+  },
+  method: {
+    onSignUp () {
+
+    }
+  }
 }
 </script>
