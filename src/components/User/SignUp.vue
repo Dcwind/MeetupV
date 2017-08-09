@@ -21,15 +21,27 @@
                                 <v-layout row>
                                     <v-flex >
                                         <v-text-field
-                                        name="comfirmPassword"
-                                        label="comfirm Password"
-                                        id="comfirmPassword"
+                                        name="password"
+                                        label="Password"
+                                        id="password"
                                         type="password"
-                                        v-model="comfirmPassword"
+                                        v-model="password"
                                         required>
                                         </v-text-field>
                                     </v-flex>
                                 </v-layout>
+                                <v-layout row>
+                                  <v-flex >
+                                      <v-text-field
+                                      name="comfirmPassword"
+                                      label="comfirm Password"
+                                      id="comfirmPassword"
+                                      type="password"
+                                      v-model="comfirmPassword"
+                                      required>
+                                      </v-text-field>
+                                  </v-flex>
+                              </v-layout>
                             </form>
                         </v-container>
                     </v-card-text>
