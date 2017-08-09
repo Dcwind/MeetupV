@@ -37,9 +37,13 @@
                                       label="comfirm Password"
                                       id="comfirmPassword"
                                       type="password"
-                                      v-model="comfirmPassword"
-                                      required>
+                                      v-model="comfirmPassword">
                                       </v-text-field>
+                                  </v-flex>
+                              </v-layout>
+                              <v-layout row>
+                                  <v-flex >
+                                      <v-btn type="submit" >Sign Up</v-btn>
                                   </v-flex>
                               </v-layout>
                             </form>
@@ -50,3 +54,16 @@
         </v-layout>
     </v-container>
 </template>
+
+<script>
+export default {
+    data () {
+      return {
+        email: '',
+        password: '',
+        comfirmPassword: ''
+      }
+      
+    }
+}
+</script>
