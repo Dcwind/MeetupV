@@ -2,6 +2,26 @@
     <v-container>
         <v-layout row>
             <v-flex xs12 sm6 offset-sm3>
+                <v-card>
+                    <v-card-text>
+                        <v-container>
+                            <form >
+                                <v-layout row>
+                                    <v-flex >
+                                        <v-text-field
+                                        name="email"
+                                        label="Mail"
+                                        id="email"
+                                        type="email"
+                                        v-model="email"
+                                        required>
+                                        </v-text-field>
+                                    </v-flex>
+                                </v-layout>
+                            </form>
+                        </v-container>
+                    </v-card-text>
+                </v-card>
             </v-flex>
         </v-layout>
     </v-container>
