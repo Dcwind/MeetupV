@@ -63,10 +63,10 @@
                         <v-flex xs12 >
                             <v-layout row wrap>
                                 <v-flex xs12 sm5>
-                                  <v-date-picker v-model="date"></v-date-picker>
+                                  <v-date-picker v-model="date" required></v-date-picker>
                                 </v-flex>
                                 <v-flex xs12 sm5 offset-sm1>
-                                  <v-time-picker v-model="time"></v-time-picker>
+                                  <v-time-picker v-model="time" required></v-time-picker>
                                 </v-flex>
                             </v-layout>
                         </v-flex>   
