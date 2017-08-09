@@ -67,7 +67,7 @@ export default {
   },
   computed: {
     comparePassword () {
-      return this.password !== this.comfirmPassword ? 'Passwords do not match' : ''
+      return this.password !== this.comfirmPassword ? 'Passwords do not match' : true
     }
   },
   method: {
