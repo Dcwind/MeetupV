@@ -33,6 +33,9 @@ export const store = new Vuex.Store({
   mutations: {
     createMeetup (state, payload) {
       state.loadedMeetups.push(payload)
+    },
+    setUser (state, payload) {
+      state.user = payload
     }
   },
   actions: {
@@ -49,7 +52,12 @@ export const store = new Vuex.Store({
       commit('createMeetup', meetup)
     },
     signUserUp ({commit}, payload) {
-      firebase.auth().createUserWithEmailAndPassword()
+      firebase.auth().createUserWithEmailAndPassword(payload.email, payload.password)
+      .then(
+        user => {
+
+        }
+      )
     }
   },
   getters: {
