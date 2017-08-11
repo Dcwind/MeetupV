@@ -49,6 +49,7 @@ export const store = new Vuex.Store({
       commit('createMeetup', meetup)
     },
     signUserUp ({commit}, payload) {
+      firebase.auth().createUserWithEmailAndPassword()
     }
   },
   getters: {
