@@ -5,7 +5,7 @@
                 <v-card>
                     <v-card-text>
                         <v-container>
-                            <form >
+                            <form @submit.prevent="onSubmit">
                                 <v-layout row>
                                     <v-flex >
                                         <v-text-field
