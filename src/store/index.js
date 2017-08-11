@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import * as firebase from 'firebase'
 
 Vue.use(Vuex)
 
@@ -46,6 +47,8 @@ export const store = new Vuex.Store({
       }
       // Reach out to firebase and store the data
       commit('createMeetup', meetup)
+    },
+    signUserUp ({commit}, payload) {
     }
   },
   getters: {
