@@ -5,7 +5,7 @@
                 <v-card>
                     <v-card-text>
                         <v-container>
-                            <form @submit.prevent="onSubmit">
+                            <form @submit.prevent="onSignUp">
                                 <v-layout row>
                                     <v-flex >
                                         <v-text-field
@@ -68,9 +68,12 @@ export default {
   computed: {
     comparePassword () {
       return this.password !== this.comfirmPassword ? 'Passwords do not match' : true
+    },
+    user () {
+      return this.$store.getters.user
     }
   },
-  method: {
+  methods: {
     onSignUp () {
       this.$store.dispatch('signUserUp', {email: this.email, password: this.password})
     }
