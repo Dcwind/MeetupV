@@ -79,7 +79,7 @@ export default {
         this.$router.push('/')
       }
     }
-  }
+  },
   methods: {
     onSignUp () {
       this.$store.dispatch('signUserUp', {email: this.email, password: this.password})
