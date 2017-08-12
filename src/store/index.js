@@ -23,12 +23,7 @@ export const store = new Vuex.Store({
         description: 'Value packed meetup come join us'
       }
     ],
-    user: {
-      id: 'mfksdmkf32mk',
-      registeredMeetups: [
-        'sfdvfger3geg'
-      ]
-    }
+    user: null
   },
   mutations: {
     createMeetup (state, payload) {
@@ -84,6 +79,9 @@ export const store = new Vuex.Store({
           return meetup.id === meetupId
         })
       }
+    },
+    user (state) {
+      return state.user
     }
   }
 })
