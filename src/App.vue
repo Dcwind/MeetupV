@@ -60,7 +60,11 @@
         return menuItems
         }
       },
-      
+      userIsAuthenticated () {
+        let user = this.$store.getters.user
+        return user !== null && user !== undefined
+      }
+
     }
   }
 </script>
