@@ -51,13 +51,13 @@
           { icon: 'face', title: 'Sign up', link: '/signup' },
           { icon: 'lock_open', title: 'Sign in', link: 'signin' }
         ]
-        if () {
+        if (this.userIsAuthenticated) {
           menuItems = [
           { icon: 'chrome_reader_mode', title: 'View Meetups', link: '/meetups' },
           { icon: 'room', title: 'Organize Meetups', link: '/meetup/createnew' },
           { icon: 'person', title: 'Profile', link: '/profile' }
-        ]
-        return menuItems
+          ]
+          return menuItems
         }
       },
       userIsAuthenticated () {
