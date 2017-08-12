@@ -59,6 +59,7 @@ export const store = new Vuex.Store({
             id: user.uid,
             registeredMeetups: []
           }
+          commit('setUser', newUser)
         }
       )
       .catch(
