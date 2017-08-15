@@ -32,7 +32,7 @@
                                 </v-layout>
                               <v-layout row>
                                   <v-flex >
-                                      <v-btn type="submit" >Sign Up</v-btn>
+                                      <v-btn type="submit" >Signin</v-btn>
                                   </v-flex>
                               </v-layout>
                             </form>
@@ -49,14 +49,10 @@ export default {
   data () {
     return {
       email: '',
-      password: '',
-      comfirmPassword: ''
+      password: ''
     }
   },
   computed: {
-    comparePassword () {
-      return this.password !== this.comfirmPassword ? 'Passwords do not match' : true
-    },
     user () {
       return this.$store.getters.user
     }
@@ -69,8 +65,8 @@ export default {
     }
   },
   methods: {
-    onSignUp () {
-      this.$store.dispatch('signUserUp', {email: this.email, password: this.password})
+    onSignIn () {
+      this.$store.dispatch('signUserIn', {email: this.email, password: this.password})
     }
   }
 }
