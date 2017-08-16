@@ -40,7 +40,7 @@ export const store = new Vuex.Store({
     setError (state, payload) {
       state.error = payload
     },
-    clearError (state, payload) {
+    clearError (state) {
       state.error = null
     }
   },
@@ -58,6 +58,7 @@ export const store = new Vuex.Store({
       commit('createMeetup', meetup)
     },
     signUserUp ({commit}, payload) {
+      commit('setLoading', true)
       firebase.auth().createUserWithEmailAndPassword(payload.email, payload.password)
       .then(
         user => {
