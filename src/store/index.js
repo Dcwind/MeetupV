@@ -59,6 +59,7 @@ export const store = new Vuex.Store({
     },
     signUserUp ({commit}, payload) {
       commit('setLoading', true)
+      commit('clearError')
       firebase.auth().createUserWithEmailAndPassword(payload.email, payload.password)
       .then(
         user => {
@@ -79,6 +80,8 @@ export const store = new Vuex.Store({
       )
     },
     signUserIn ({commit}, payload) {
+      commit('setLoading', true)
+      commit('clearError')
       firebase.auth().signInWithEmailAndPassword(payload.email, payload.password)
       .then(
         user => {
@@ -91,6 +94,8 @@ export const store = new Vuex.Store({
       )
       .catch(
         error => {
+          commit('setLoading', false)
+          commit('setError', error)
           console.log(error)
         }
       )
