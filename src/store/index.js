@@ -24,7 +24,8 @@ export const store = new Vuex.Store({
       }
     ],
     user: null,
-    loading: false
+    loading: false,
+    error: null
   },
   mutations: {
     createMeetup (state, payload) {
@@ -32,6 +33,9 @@ export const store = new Vuex.Store({
     },
     setUser (state, payload) {
       state.user = payload
+    },
+    setLoading (state, payload) {
+      state.loading = payload
     }
   },
   actions: {
