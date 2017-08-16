@@ -36,6 +36,9 @@ export const store = new Vuex.Store({
     },
     setLoading (state, payload) {
       state.loading = payload
+    },
+    setError (state, payload) {
+      state.error = payload
     }
   },
   actions: {
