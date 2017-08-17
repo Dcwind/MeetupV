@@ -49,7 +49,12 @@
                               </v-layout>
                               <v-layout row>
                                   <v-flex >
-                                      <v-btn type="submit" >Sign Up</v-btn>
+                                      <v-btn type="submit" >
+                                      Sign Up
+                                      <span slot="loader" class="custom-loader">
+                                        <v-icon light>cached</v-icon>
+                                      </span>
+                                      </v-btn>
                                   </v-flex>
                               </v-layout>
                             </form>
