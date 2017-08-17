@@ -80,6 +80,10 @@ export default {
   methods: {
     onSignIn () {
       this.$store.dispatch('signUserIn', {email: this.email, password: this.password})
+    },
+    onDismissed () {
+      console.log('dismissed')
+      this.$store.dispatch('clearError')
     }
   }
 }
