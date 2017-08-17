@@ -1,5 +1,5 @@
 <template>
-<v-alert error dismissible v-model="alert">
+<v-alert error dismissible @input="onClose">
   This is a success alert that is closable.
 </v-alert>
 </template>
