@@ -76,6 +76,9 @@ export default {
     },
     user () {
       return this.$store.getters.user
+    },
+    error () {
+      return this.$store.getters.error
     }
   },
   watch: {
@@ -88,6 +91,9 @@ export default {
   methods: {
     onSignUp () {
       this.$store.dispatch('signUserUp', {email: this.email, password: this.password})
+    },
+    onDismissed () {
+      console.log('dismissed')
     }
   }
 }
