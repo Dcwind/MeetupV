@@ -57,8 +57,8 @@
           { icon: 'room', title: 'Organize Meetups', link: '/meetup/createnew' },
           { icon: 'person', title: 'Profile', link: '/profile' }
           ]
-          return menuItems
         }
+        return menuItems
       },
       userIsAuthenticated () {
         let user = this.$store.getters.user
