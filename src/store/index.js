@@ -55,7 +55,13 @@ export const store = new Vuex.Store({
       }
       // Reach out to firebase and store the data
       firebase.database().ref('meetups').push(meetup)
-      commit('createMeetup', meetup)
+        .then((data) => {
+          commit('createMeetup', meetup)
+          console.log(data)
+        })
+        .catch((error) => {
+          console.log(error)
+        })
     },
     signUserUp ({commit}, payload) {
       commit('setLoading', true)
