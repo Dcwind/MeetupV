@@ -48,7 +48,8 @@ export const store = new Vuex.Store({
     }
   },
   actions: {
-    loadedMeetups ({commit}) {
+    loadMeetups ({commit}) {
+      commit('setLoading', true)
       firebase.database().ref('meetups').once('value')
         .then((data) => {
           const meetups = []
@@ -63,9 +64,11 @@ export const store = new Vuex.Store({
             })
           }
           commit('setLoadedMeetups', meetups)
+          commit('setLoading', false)
         })
         .catch((error) => {
           console.log(error)
+          commit('setLoading', true)
         })
     },
     createMeetup ({commit}, payload) {
