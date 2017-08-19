@@ -1,6 +1,8 @@
 <template>
 <v-progress-circular 
-indeterminate v-bind:size="50" 
+indeterminate 
+:width="7"
+:size="70" 
 class="primary--text"
 ></v-progress-circular>
 </template>
