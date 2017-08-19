@@ -13,7 +13,7 @@
             <app-loading></app-loading>
          </v-flex>
        </v-layout>
-       <v-layout row wrap class="mt-2">
+       <v-layout row wrap class="mt-2" v-if="!loading">
          <v-flex xs12>
            <v-carousel style="cursor: pointer">
               <v-carousel-item 
@@ -42,6 +42,9 @@
     computed: {
       meetups () {
         return this.$store.getters.featuredMeetups
+      },
+      loading () {
+        return this.$store.getters.loading
       }
     },
     methods: {
