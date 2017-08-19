@@ -6,12 +6,14 @@ import router from './router'
 import { store } from './store'
 import DateFilter from './filters/date'
 import AlertCmp from './components/shared/Alert.vue'
+import Apploading from './components/shared/Loading'
 
 Vue.use(Vuetify)
 Vue.config.productionTip = false
 
 Vue.filter('date', DateFilter)
 Vue.component('app-alert', AlertCmp)
+Vue.component('app-loading', Apploading)
 
 /* eslint-disable no-new */
 new Vue({
