@@ -8,6 +8,11 @@
                <v-btn large to="/meetup/createnew">Organize Meetup</v-btn>
            </v-flex>
        </v-layout>
+       <v-layout row>
+         <v-flex xs12 class="text-xs-center">
+            <app-loading></app-loading>
+         </v-flex>
+       </v-layout>
        <v-layout row wrap class="mt-2">
          <v-flex xs12>
            <v-carousel style="cursor: pointer">
