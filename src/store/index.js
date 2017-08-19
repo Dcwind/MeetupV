@@ -45,6 +45,26 @@ export const store = new Vuex.Store({
     }
   },
   actions: {
+    loadedMeetups ({commit}) {
+      firebase.database().ref('meetups').once('value')
+        .then((data) => {
+          const meetups = []
+          const obj = data.val()
+          for (let key in obj) {
+            meetups.push({
+              id: key,
+              title: obj[key].title,
+              description: obj[key].description,
+              imageUrl: obj[key].imageUrl,
+              date: obj[key].date
+            })
+          }
+          commit('setLoadedMeetups', meetups)
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+    },
     createMeetup ({commit}, payload) {
       const meetup = {
         title: payload.title,
