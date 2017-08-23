@@ -137,6 +137,9 @@ export const store = new Vuex.Store({
         }
       )
     },
+    autoSignIn ({commit}, payload) {
+
+    },
     clearError ({commit}) {
       commit('clearError')
     }
