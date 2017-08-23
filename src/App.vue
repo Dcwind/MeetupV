@@ -29,7 +29,7 @@
             <v-icon left>{{item.icon}}</v-icon>
             {{item.title}}
           </v-btn>
-          <v-btn flat>
+          <v-btn flat @click="onLogout" v-if="userIsAuthenticated">
             <v-icon left>exit_to_app</v-icon>
             Logout
           </v-btn>
@@ -60,7 +60,6 @@
           { icon: 'chrome_reader_mode', title: 'View Meetups', link: '/meetups' },
           { icon: 'room', title: 'Organize Meetups', link: '/meetup/createnew' },
           { icon: 'person', title: 'Profile', link: '/profile' }
-          { icon: 'exit_to_app', title: 'Logout', link: '/profile' }
           ]
         }
         return menuItems
@@ -70,6 +69,11 @@
         return user !== null && user !== undefined
       }
 
+    },
+    methods: {
+      onLogout () {
+        this.$store.dispatch('logout')
+      }
     }
   }
 </script>
