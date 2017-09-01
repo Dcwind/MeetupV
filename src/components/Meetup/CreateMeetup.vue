@@ -109,7 +109,9 @@
          const peram = this.time.match(/([pa])/)[1]
 
          if (peram === 'p') {
-           hours = hours + 12
+        //    hours = hours + 12
+           hours = hours > 12 ? hours : parseInt(hours) + 12
+           console.log(hours)
          }
 
          date.setHours(hours)
