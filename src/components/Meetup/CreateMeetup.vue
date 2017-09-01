@@ -73,6 +73,7 @@
                     </v-layout>
                      <v-layout row>
                         <v-flex xs12 >
+                            {{dateTime}}
                             <v-btn :disabled="!formIsValid"
                             type="submit">create Meetup</v-btn>
                         </v-flex>
@@ -103,8 +104,13 @@
        const date = new Date(this.date)
 
        if (typeof this.time === 'string') {
-         const hours = this.time.match(/^(\d+)/)[1]
+         let hours = this.time.match(/^(\d+)/)[1]
          const minutes = this.time.match(/:(\d+)/)[1]
+         const peram = this.time.match(/([pa])/)[1]
+
+         if (peram === 'p') {
+           hours = hours + 12
+         }
 
          date.setHours(hours)
          date.setMinutes(minutes)
