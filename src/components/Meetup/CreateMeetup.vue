@@ -30,12 +30,7 @@
                     </v-layout>
                     <v-layout row>
                         <v-flex xs12 >
-                            <v-text-field 
-                            name="imageUrl"
-                            label="Image Url"
-                            id="image-url"
-                            required
-                            v-model="imageUrl"></v-text-field>
+                            
                         </v-flex>
                     </v-layout>
                     <v-layout row>
