@@ -30,7 +30,7 @@
                     </v-layout>
                     <v-layout row>
                         <v-flex xs12 >
-                            
+                            <input type="file">
                         </v-flex>
                     </v-layout>
                     <v-layout row>
