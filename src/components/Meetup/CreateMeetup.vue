@@ -30,7 +30,8 @@
                     </v-layout>
                     <v-layout row>
                         <v-flex xs12 >
-                            <input type="file">
+                            <v-btn raised>Upload Image</v-btn>
+                            <input type="file" style="display: none">
                         </v-flex>
                     </v-layout>
                     <v-layout row>
