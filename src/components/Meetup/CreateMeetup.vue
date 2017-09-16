@@ -94,7 +94,8 @@
        description: '',
        imageUrl: '',
        date: new Date(),
-       time: new Date()
+       time: new Date(),
+       image: null
      }
    },
    computed: {
@@ -154,6 +155,7 @@
          this.imageUrl = fileReader.result
        })
        fileReader.readAsDataURL(files[0])
+       this.image = files[0]
      }
    }
  }
