@@ -150,6 +150,9 @@
          return alert('Please add a valid files')
        }
        const fileReader = new FileReader()
+       fileReader.addEventListener('load', () => {
+         this.imageUrl = fileReader.result
+       })
        fileReader.readAsDataURL(files[0])
      }
    }
