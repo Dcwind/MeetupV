@@ -135,7 +135,7 @@
        this.$router.push('/meetups')
      }
      onPickFile () {
-
+       this.$refs.fileInput.click();
      }
    }
  }
