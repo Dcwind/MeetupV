@@ -31,7 +31,13 @@
                     <v-layout row>
                         <v-flex xs12 >
                             <v-btn raised @click="onPickFile">Upload Image</v-btn>
-                            <input type="file" style="display: none" ref="fileInput" accept="image/*">
+                            <input 
+                             type="file" 
+                             style="display: none" 
+                             ref="fileInput" 
+                             accept="image/*"
+                             @change="onFilePicked"
+                             >
                         </v-flex>
                     </v-layout>
                     <v-layout row>
@@ -133,9 +139,18 @@
        }
        this.$store.dispatch('createMeetup', meetupData)
        this.$router.push('/meetups')
-     }
+     },
      onPickFile () {
-       this.$refs.fileInput.click();
+       this.$refs.fileInput.click()
+     },
+     onFilePicked (event) {
+       const files = event.target.files 
+       let fileName = files[0].filename
+       if (filename.lastIndexOf('.') <= 0) {
+         return alert('Please add a valid files')
+       }
+       const fileReader = new FileReader()
+       fileReader.readAsDataURL(files[0])
      }
    }
  }
