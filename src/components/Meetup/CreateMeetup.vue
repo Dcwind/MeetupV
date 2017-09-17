@@ -135,7 +135,7 @@
          title: this.title,
          location: this.location,
          description: this.description,
-         imageUrl: this.imageUrl,
+         image: this.image,
          date: this.dateTime
        }
        this.$store.dispatch('createMeetup', meetupData)
@@ -145,8 +145,8 @@
        this.$refs.fileInput.click()
      },
      onFilePicked (event) {
-       const files = event.target.files 
-       let fileName = files[0].filename
+       const files = event.target.files
+       let filename = files[0].name
        if (filename.lastIndexOf('.') <= 0) {
          return alert('Please add a valid files')
        }
