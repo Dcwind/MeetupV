@@ -92,6 +92,8 @@ export const store = new Vuex.Store({
         })
         .then(key => {
           const filename = payload.image.name
+          const ext = filename.slice(filename.lastIndexOf('.'))
+          firebase.storage().ref(`meetups/${key}.${ext}`)
         })
         .catch((error) => {
           console.log(error)
