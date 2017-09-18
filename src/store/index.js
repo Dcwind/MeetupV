@@ -86,10 +86,6 @@ export const store = new Vuex.Store({
       firebase.database().ref('meetups').push(meetup)
         .then((data) => {
           key = data.key
-          // commit('createMeetup', {
-          //   ...meetup,
-          //   id: key
-          // })
           return key
         })
         .then(key => {
@@ -100,6 +96,13 @@ export const store = new Vuex.Store({
         .then(fileData => {
           imageUrl = fileData.metadate.downloadURLs[0]
           return firebase.database.ref('meetups').child('key').update({imageUrl: imageUrl})
+        })
+        .then(() => {
+          commit('createMeetup', {
+            ...meetup,
+            id: key,
+            imageUrl: imageUrl
+          })
         })
         .catch((error) => {
           console.log(error)
