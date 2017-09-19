@@ -7,6 +7,27 @@
             <v-container>
                 <v-layout row wrap>
                     <v-flex xs12>
+                        <v-card-title>Edit Meetup</v-card-title>
+                    </v-flex>
+                </v-layout>
+                <v-divider></v-divider>
+                <v-layout row wrap>
+                    <v-flex xs12>
+                        <v-card-text>
+                            <v-text-field 
+                            name="title"
+                            label="Title"
+                            id="title"
+                            required
+                            v-model="title"></v-text-field>
+                            <v-text-field 
+                            name="description"
+                            label="Description"
+                            id="description"
+                            multi-line
+                            required
+                            v-model="description"></v-text-field>
+                        </v-card-text>
                     </v-flex>
                 </v-layout>
             </v-container>
