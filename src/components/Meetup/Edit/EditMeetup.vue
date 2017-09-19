@@ -19,14 +19,14 @@
                             label="Title"
                             id="title"
                             required
-                            v-model="title"></v-text-field>
+                            v-model="editedTitle"></v-text-field>
                             <v-text-field 
                             name="description"
                             label="Description"
                             id="description"
                             multi-line
                             required
-                            v-model="description"></v-text-field>
+                            v-model="editedDescription"></v-text-field>
                         </v-card-text>
                     </v-flex>
                 </v-layout>
@@ -48,10 +48,10 @@
 export default {
   props: ['meetup'],
   data () {
-     return {
-       editedTitle: this.meetup.title,
-       editedDescription: this.meetup.description
-     }
-   }
+    return {
+      editedTitle: this.meetup.title,
+      editedDescription: this.meetup.description
+    }
+  }
 }
 </script>
