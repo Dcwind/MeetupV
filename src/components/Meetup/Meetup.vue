@@ -3,7 +3,13 @@
         <v-layout row wrap>
             <v-flex xs12>
                 <v-card>
-                    <v-card-title><h5>{{meetup.title}}</h5></v-card-title>
+                    <v-card-title>
+                        <h5>{{meetup.title}}</h5>
+                        <template v-if="true">
+                            <v-spacer></v-spacer>
+                            <app-edit-meetup></app-edit-meetup>
+                        </template>
+                    </v-card-title>
                     <v-card-media :src="meetup.imageUrl" 
                      height="400px">
                     </v-card-media>
