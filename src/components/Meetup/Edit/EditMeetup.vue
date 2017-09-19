@@ -43,3 +43,15 @@
         </v-card>
     </v-dialog>
 </template>
+
+<script>
+export default {
+  props: ['meetup'],
+  data () {
+     return {
+       editedTitle: this.meetup.title,
+       editedDescription: this.meetup.description
+     }
+   }
+}
+</script>
