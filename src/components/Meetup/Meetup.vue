@@ -7,7 +7,7 @@
                         <h5>{{meetup.title}}</h5>
                         <template v-if="userIsCreator">
                             <v-spacer></v-spacer>
-                            <app-edit-meetup></app-edit-meetup>
+                            <app-edit-meetup :meetup="meetup"></app-edit-meetup>
                         </template>
                     </v-card-title>
                     <v-card-media :src="meetup.imageUrl" 
