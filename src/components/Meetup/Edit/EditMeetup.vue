@@ -30,6 +30,15 @@
                         </v-card-text>
                     </v-flex>
                 </v-layout>
+                <v-divider></v-divider>
+                <v-layout row wrap>
+                    <v-flex xs12>
+                        <v-card-actions>
+                            <v-btn flat class="blue--text darken-1">Close</v-btn>
+                            <v-btn flat class="blue--text darken-1">Save</v-btn>
+                        </v-card-actions>
+                    </v-flex>
+                </v-layout>
             </v-container>
         </v-card>
     </v-dialog>
