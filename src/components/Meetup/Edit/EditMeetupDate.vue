@@ -13,19 +13,40 @@
                 <v-divider></v-divider>
                 <v-layout row wrap>
                     <v-flex xs12>
-                        <v-date-picker v-model="editedDate"></v-date-picker>
-                    </v-flex>
-                </v-layout>
-                <v-divider></v-divider>
-                <v-layout row wrap>
-                    <v-flex xs12>
-                        <v-card-actions>
-                            <v-btn flat class="blue--text darken-1" @click="editDialog = false">Close</v-btn>
-                            <v-btn flat class="blue--text darken-1" @click="onSaveChanges">Save</v-btn>
-                        </v-card-actions>
+                        <v-date-picker v-model="editedDate" style="width: 100%" actions>
+                            <template scope="{save, cancel}">
+                                <v-btn class="blue--text darken-1" flat @click="editDialog = false">Close</v-btn>
+                            </template>
+                        </v-date-picker>
                     </v-flex>
                 </v-layout>
             </v-container>
         </v-card>
     </v-dialog>
 </template>
+
+<script>
+export default {
+  props: ['meetup'],
+  data () {
+    return {
+      editDialog: false,
+      editedTitle: this.meetup.title,
+      editedDescription: this.meetup.description
+    }
+  },
+  methods: {
+    onSaveChanges () {
+      if (this.editedTitle.trim() === '' || this.editedDescription.trim() === '') {
+        return
+      }
+      this.editDialog = false
+      this.$store.dispatch('updateMeetupData', {
+        id: this.meetup.id,
+        title: this.editedTitle,
+        description: this.editedDescription
+      })
+    }
+  }
+}
+</script>
