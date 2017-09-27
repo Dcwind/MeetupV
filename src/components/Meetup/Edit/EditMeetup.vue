@@ -56,7 +56,7 @@ export default {
   },
   methods: {
     onSaveChanges () {
-      
+      this.editDialog = false
     }
   }
 }
