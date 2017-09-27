@@ -138,7 +138,11 @@ export const store = new Vuex.Store({
       firebase.database().ref('meetup').child(payload.id).update(updateObj)
       .then(() => {
         commit('setLoading', false)
-
+        commit('updateMeetup', payload)
+      })
+      .catch(error => {
+        console.log(error)
+        commit('setLoading', false)
       })
     },
     signUserUp ({commit}, payload) {
