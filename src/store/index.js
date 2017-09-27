@@ -121,6 +121,7 @@ export const store = new Vuex.Store({
       if (payload.date) {
         updateObj.date = payload.date
       }
+      firebase.ref('meetup').child(payload.id).update(updateObj)
     },
     signUserUp ({commit}, payload) {
       commit('setLoading', true)
