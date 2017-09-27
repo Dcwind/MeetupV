@@ -16,6 +16,7 @@
                         <v-date-picker v-model="editedDate" style="width: 100%" actions>
                             <template scope="{save, cancel}">
                                 <v-btn class="blue--text darken-1" flat @click="editDialog = false">Close</v-btn>
+                                <v-btn class="blue--text darken-1" flat @click="onSaveChanges">Save</v-btn>
                             </template>
                         </v-date-picker>
                     </v-flex>
