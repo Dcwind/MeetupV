@@ -56,6 +56,9 @@ export default {
   },
   methods: {
     onSaveChanges () {
+      if (this.editedTitle.trim() === '' || this.editedDescription.trim() === '') {
+        return
+      }
       this.editDialog = false
     }
   }
