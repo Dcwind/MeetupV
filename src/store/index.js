@@ -109,6 +109,19 @@ export const store = new Vuex.Store({
           console.log(error)
         })
     },
+    updateMeetupData ({commit}, payload) {
+      commit('setLoading', true)
+      const updateObj = {}
+      if (payload.title) {
+        updateObj.title = payload.title
+      }
+      if (payload.description) {
+        updateObj.description = payload.description
+      }
+      if (payload.date) {
+        updateObj.date = payload.date
+      }
+    },
     signUserUp ({commit}, payload) {
       commit('setLoading', true)
       commit('clearError')
