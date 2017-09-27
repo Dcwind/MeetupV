@@ -13,7 +13,7 @@
                 <v-divider></v-divider>
                 <v-layout row wrap>
                     <v-flex xs12>
-                        <v-date-picker v-model="editedDate" style="width: 100%" actions>
+                        <v-date-picker v-model="editableDate" style="width: 100%" actions>
                             <template scope="{save, cancel}">
                                 <v-btn class="blue--text darken-1" flat @click="editDialog = false">Close</v-btn>
                                 <v-btn class="blue--text darken-1" flat @click="onSaveChanges">Save</v-btn>
@@ -32,22 +32,18 @@ export default {
   data () {
     return {
       editDialog: false,
-      editedTitle: this.meetup.title,
-      editedDescription: this.meetup.description
+      editableDate: null
     }
   },
   methods: {
     onSaveChanges () {
-      if (this.editedTitle.trim() === '' || this.editedDescription.trim() === '') {
-        return
-      }
       this.editDialog = false
       this.$store.dispatch('updateMeetupData', {
-        id: this.meetup.id,
-        title: this.editedTitle,
-        description: this.editedDescription
       })
     }
+  },
+  created () {
+    this.editableDate = new Date(this.meetup.date)
   }
 }
 </script>
