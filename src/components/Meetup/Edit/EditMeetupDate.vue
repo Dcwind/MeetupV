@@ -38,6 +38,11 @@ export default {
   methods: {
     onSaveChanges () {
       this.editDialog = false
+      const newDate = new Date(this.meetup.date)
+      const newDay = new Date(this.editableDate).getUTCDate()
+      const newMonth = new Date(this.editableDate).getUTCMonth()
+      const newYear = new Date(this.editableDate).getUTCFullYear()
+
       this.$store.dispatch('updateMeetupData', {
       })
     }
