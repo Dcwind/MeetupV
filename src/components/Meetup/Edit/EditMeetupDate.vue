@@ -48,6 +48,8 @@ export default {
       newDate.setUTCFullYear(newYear)
 
       this.$store.dispatch('updateMeetupData', {
+        id: this.meetup.id,
+        date: newDate
       })
     }
   },
