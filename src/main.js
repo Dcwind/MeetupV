@@ -9,6 +9,7 @@ import AlertCmp from './components/shared/Alert.vue'
 import Apploading from './components/shared/Loading'
 import EditMeetup from './components/Meetup/Edit/EditMeetup'
 import EditMeetupDate from './components/Meetup/Edit/EditMeetupDate'
+import EditMeetupTime from './components/Meetup/Edit/EditMeetupTime'
 
 Vue.use(Vuetify)
 Vue.config.productionTip = false
@@ -18,6 +19,7 @@ Vue.component('app-alert', AlertCmp)
 Vue.component('app-loading', Apploading)
 Vue.component('app-edit-meetup', EditMeetup)
 Vue.component('app-edit-meetup-date', EditMeetupDate)
+Vue.component('app-edit-meetup-time', EditMeetupTime)
 
 /* eslint-disable no-new */
 new Vue({
