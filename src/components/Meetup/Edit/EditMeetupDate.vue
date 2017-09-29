@@ -42,7 +42,6 @@ export default {
       const newDay = new Date(this.editableDate).getUTCDate()
       const newMonth = new Date(this.editableDate).getUTCMonth()
       const newYear = new Date(this.editableDate).getUTCFullYear()
-      
       newDate.setUTCDate(newDay)
       newDate.setUTCMonth(newMonth)
       newDate.setUTCFullYear(newYear)
