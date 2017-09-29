@@ -39,13 +39,18 @@ export default {
     onSaveChanges () {
       this.editDialog = false
       const newDate = new Date(this.meetup.date)
-      const newDay = new Date(this.editableDate).getUTCDate()
-      const newMonth = new Date(this.editableDate).getUTCMonth()
-      const newYear = new Date(this.editableDate).getUTCFullYear()
-      
-      newDate.setUTCDate(newDay)
-      newDate.setUTCMonth(newMonth)
-      newDate.setUTCFullYear(newYear)
+      let hours = this.time.match(/^(\d+)/)[1]
+      const minutes = this.time.match(/:(\d+)/)[1]
+      const peram = this.time.match(/([pa])/)[1]
+
+        if (peram === 'p') {
+          hours = hours > 11 ? hours : parseInt(hours) + 12
+        } else {
+          hours = hours === '12' ? hours = 0 : hours
+        }
+
+      newDate.setHours(hours)
+      newDate.setMinutes(minutes)
 
       this.$store.dispatch('updateMeetupData', {
         id: this.meetup.id,
