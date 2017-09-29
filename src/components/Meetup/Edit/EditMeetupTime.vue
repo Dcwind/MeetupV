@@ -43,11 +43,11 @@ export default {
       const minutes = this.time.match(/:(\d+)/)[1]
       const peram = this.time.match(/([pa])/)[1]
 
-        if (peram === 'p') {
-          hours = hours > 11 ? hours : parseInt(hours) + 12
-        } else {
-          hours = hours === '12' ? hours = 0 : hours
-        }
+      if (peram === 'p') {
+        hours = hours > 11 ? hours : parseInt(hours) + 12
+      } else {
+        hours = hours === '12' ? hours = 0 : hours
+      }
 
       newDate.setHours(hours)
       newDate.setMinutes(minutes)
