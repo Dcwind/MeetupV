@@ -7,13 +7,13 @@
             <v-container>
                 <v-layout row wrap>
                     <v-flex xs12>
-                        <v-card-title>Edit Meetup Date</v-card-title>
+                        <v-card-title>Edit Meetup Time</v-card-title>
                     </v-flex>
                 </v-layout>
                 <v-divider></v-divider>
                 <v-layout row wrap>
                     <v-flex xs12>
-                        <v-time-picker v-model="editableDate" style="width: 100%" actions>
+                        <v-time-picker v-model="editableTime" style="width: 100%" actions>
                             <template scope="{save, cancel}">
                                 <v-btn class="blue--text darken-1" flat @click="editDialog = false">Close</v-btn>
                                 <v-btn class="blue--text darken-1" flat @click="onSaveChanges">Save</v-btn>
@@ -32,7 +32,7 @@ export default {
   data () {
     return {
       editDialog: false,
-      editableDate: null
+      editableTime: null
     }
   },
   methods: {
@@ -54,7 +54,7 @@ export default {
     }
   },
   created () {
-    this.editableDate = new Date(this.meetup.date)
+    this.editableTime = new Date(this.meetup.date).toTimeString()
   }
 }
 </script>
