@@ -39,9 +39,9 @@ export default {
     onSaveChanges () {
       this.editDialog = false
       const newDate = new Date(this.meetup.date)
-      let hours = this.time.match(/^(\d+)/)[1]
-      const minutes = this.time.match(/:(\d+)/)[1]
-      const peram = this.time.match(/([pa])/)[1]
+      let hours = this.editableTime.match(/^(\d+)/)[1]
+      const minutes = this.editableTime.match(/:(\d+)/)[1]
+      const peram = this.editableTime.match(/([pa])/)[1]
 
       if (peram === 'p') {
         hours = hours > 11 ? hours : parseInt(hours) + 12
