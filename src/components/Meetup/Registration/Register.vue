@@ -1,5 +1,5 @@
 <template>
-    <v-dialog width="350px" persistent v-model="editDialog">
+    <v-dialog  persistent v-model="registerDialog">
         <v-btn accent slot="activator">
             Register
         </v-btn>
@@ -34,6 +34,13 @@ export default {
       editDialog: false
     }
   },
+  computed: {
+    userIsRegistered () {
+      this.$store.getters.user.registeredMeetups.findIndex(meetupId => {
+         return meetupId === this.meetup.id
+      })
+    }
+  }
   methods: {
     onSaveChanges () {
       this.editDialog = false
