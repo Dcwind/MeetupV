@@ -1,7 +1,7 @@
 <template>
     <v-dialog  persistent v-model="registerDialog">
         <v-btn accent slot="activator">
-            Register
+            {{userIsRegistered ? 'Unregister' : 'Register'}}
         </v-btn>
         <v-card>
             <v-container>
@@ -38,7 +38,7 @@ export default {
     userIsRegistered () {
       this.$store.getters.user.registeredMeetups.findIndex(meetupId => {
          return meetupId === this.meetup.id
-      })
+      }) >= 0
     }
   }
   methods: {
