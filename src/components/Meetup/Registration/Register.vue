@@ -7,7 +7,8 @@
             <v-container>
                 <v-layout row wrap>
                     <v-flex xs12>
-                        <v-card-title>Register</v-card-title>
+                        <v-card-title v-if="userIsRegistered">unregister from meetup</v-card-title>
+                        <v-card-title v-else>Register for meetup</v-card-title>
                     </v-flex>
                 </v-layout>
                 <v-divider></v-divider>
