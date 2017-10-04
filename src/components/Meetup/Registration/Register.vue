@@ -20,8 +20,8 @@
                 <v-layout row wrap>
                     <v-flex xs12>
                         <v-card-actions>
-                            <v-btn class="" @click="" flat></v-btn>
-                            <v-btn class="" @click="" flat></v-btn>
+                            <v-btn class="red--text darken-1" @click="registerDialog = false" flat>Cancel</v-btn>
+                            <v-btn class="green--text darken-1" @click="onAgree" flat>Confirm</v-btn>
                         </v-card-actions>
                     </v-flex>
                 </v-layout>
@@ -35,7 +35,7 @@ export default {
   props: ['meetup'],
   data () {
     return {
-      editDialog: false
+      registerDialog: false
     }
   },
   computed: {
@@ -46,7 +46,7 @@ export default {
     }
   }
   methods: {
-    onSaveChanges () {
+    onAgree () {
       this.editDialog = false
       this.$store.dispatch('updateMeetupData', {
       })
