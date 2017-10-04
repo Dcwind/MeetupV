@@ -14,12 +14,15 @@
                 <v-divider></v-divider>
                 <v-layout row wrap>
                     <v-flex xs12>
-                        <v-time-picker v-model="editableTime" style="width: 100%" actions>
-                            <template scope="{save, cancel}">
-                                <v-btn class="blue--text darken-1" flat @click="editDialog = false">Close</v-btn>
-                                <v-btn class="blue--text darken-1" flat @click="onSaveChanges">Save</v-btn>
-                            </template>
-                        </v-time-picker>
+                        <v-card-text>You can always change your dicision.</v-card-text>
+                    </v-flex>
+                </v-layout>
+                <v-layout row wrap>
+                    <v-flex xs12>
+                        <v-card-actions>
+                            <v-btn class="" @click="" flat></v-btn>
+                            <v-btn class="" @click="" flat></v-btn>
+                        </v-card-actions>
                     </v-flex>
                 </v-layout>
             </v-container>
