@@ -179,6 +179,16 @@ export const store = new Vuex.Store({
         return
       }
       const fbkey = user.fbkeys[payload]
+      firebase.database().ref(`/user/${user.id}/registration/`).child(fbkey)
+      .remove()
+      .then(() => {
+        commit('setLoading', false)
+        commit('unregisterFromMeetup', payload)
+      })
+      .catch(error => {
+        console.log(error)
+        commit('setLoading', false)
+      })
     },
     signUserUp ({commit}, payload) {
       commit('setLoading', true)
