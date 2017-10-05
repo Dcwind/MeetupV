@@ -172,7 +172,13 @@ export const store = new Vuex.Store({
         commit('setLoading', false)
       })
     },
-    unregisterFromMeetup ({commit}, payload) {
+    unregisterFromMeetup ({commit, getters}, payload) {
+      commit('setLoading', true)
+      const user = getters.user
+      if (!user.fbkeys) {
+        return
+      }
+      const fbkey = user.fbkeys[payload]
     },
     signUserUp ({commit}, payload) {
       commit('setLoading', true)
