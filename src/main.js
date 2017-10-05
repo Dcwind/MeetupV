@@ -10,6 +10,7 @@ import Apploading from './components/shared/Loading'
 import EditMeetup from './components/Meetup/Edit/EditMeetup'
 import EditMeetupDate from './components/Meetup/Edit/EditMeetupDate'
 import EditMeetupTime from './components/Meetup/Edit/EditMeetupTime'
+import RegisterMeetup from './components/Meetup/Edit/Registration/Register'
 
 Vue.use(Vuetify)
 Vue.config.productionTip = false
@@ -20,6 +21,7 @@ Vue.component('app-loading', Apploading)
 Vue.component('app-edit-meetup', EditMeetup)
 Vue.component('app-edit-meetup-date', EditMeetupDate)
 Vue.component('app-edit-meetup-time', EditMeetupTime)
+Vue.component('app-register-meetup', RegisterMeetup)
 
 /* eslint-disable no-new */
 new Vue({
