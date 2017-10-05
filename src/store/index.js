@@ -28,6 +28,14 @@ export const store = new Vuex.Store({
     error: null
   },
   mutations: {
+    registerForMeetup (state, payload) {
+      const id = payload.id
+      if (state.user.registeredMeetups.findIndex(meetupId => meetupId === id) >= 0) {
+        return
+      }
+      state.user.registeredMeetups.push(id)
+      state.user.fbkeys[id] = payload.fbkey
+    },
     createMeetup (state, payload) {
       state.loadedMeetups.push(payload)
     },
