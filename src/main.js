@@ -10,7 +10,7 @@ import Apploading from './components/shared/Loading'
 import EditMeetup from './components/Meetup/Edit/EditMeetup'
 import EditMeetupDate from './components/Meetup/Edit/EditMeetupDate'
 import EditMeetupTime from './components/Meetup/Edit/EditMeetupTime'
-import RegisterMeetup from './components/Meetup/Edit/Registration/Register'
+import RegisterMeetup from './components/Meetup/Registration/Register'
 
 Vue.use(Vuetify)
 Vue.config.productionTip = false
