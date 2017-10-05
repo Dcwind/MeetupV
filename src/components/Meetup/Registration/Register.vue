@@ -41,10 +41,10 @@ export default {
   computed: {
     userIsRegistered () {
       this.$store.getters.user.registeredMeetups.findIndex(meetupId => {
-         return meetupId === this.meetup.id
+        return meetupId === this.meetup.id
       }) >= 0
     }
-  }
+  },
   methods: {
     onAgree () {
       this.registerDialog = false
