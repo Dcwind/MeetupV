@@ -161,7 +161,7 @@ export const store = new Vuex.Store({
     registerForMeetup ({commit, getters}, payload) {
       commit('setLoading', true)
       const user = getters.user
-      firebase.database().ref('/user/' + user.id).child('/registration/')
+      firebase.database().ref('/user/' + user.id).child('/registrations/')
       .push(payload)
       .then(data => {
         commit('setLoading', false)
@@ -179,7 +179,7 @@ export const store = new Vuex.Store({
         return
       }
       const fbkey = user.fbkeys[payload]
-      firebase.database().ref(`/user/${user.id}/registration/`).child(fbkey)
+      firebase.database().ref(`/user/${user.id}/registrations/`).child(fbkey)
       .remove()
       .then(() => {
         commit('setLoading', false)
@@ -199,7 +199,8 @@ export const store = new Vuex.Store({
           commit('setLoading', false)
           const newUser = {
             id: user.uid,
-            registeredMeetups: []
+            registeredMeetups: [],
+            fbkeys: {}
           }
           commit('setUser', newUser)
         }
@@ -221,7 +222,8 @@ export const store = new Vuex.Store({
           commit('setLoading', false)
           const newUser = {
             id: user.uid,
-            registeredMeetups: []
+            registeredMeetups: [],
+            fbkeys: {}
           }
           commit('setUser', newUser)
         }
