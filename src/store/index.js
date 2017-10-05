@@ -36,6 +36,11 @@ export const store = new Vuex.Store({
       state.user.registeredMeetups.push(id)
       state.user.fbkeys[id] = payload.fbkey
     },
+    unregisterFromMeetup (state, payload) {
+      const registeredMeetups = state.user.registeredMeetups
+      registeredMeetups.splice(registeredMeetups.findIndex(meetupId => meetupId === payload), 1)
+      Reflect.deleteProperty(state.user.fbkeys, payload)
+    },
     createMeetup (state, payload) {
       state.loadedMeetups.push(payload)
     },
