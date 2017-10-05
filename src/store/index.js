@@ -145,6 +145,22 @@ export const store = new Vuex.Store({
         commit('setLoading', false)
       })
     },
+    registerForMeetup ({commit, getters}, payload) {
+      commit('setLoading', true)
+      const user = getters.user
+      firebase.database().ref('/user/' + user.id).child('/registration/')
+      .push(payload)
+      .then(data => {
+        commit('setLoading', false)
+        commit('registerUserForMeetup', {id: payload, fbkey: data.key})
+      })
+      .catch(error => {
+        console.log(error)
+        commit('setLoading', false)
+      })
+    },
+    unregisterFromMeetup ({commit}, payload) {
+    },
     signUserUp ({commit}, payload) {
       commit('setLoading', true)
       commit('clearError')
