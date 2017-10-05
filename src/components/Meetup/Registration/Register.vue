@@ -47,9 +47,12 @@ export default {
   }
   methods: {
     onAgree () {
-      this.editDialog = false
-      this.$store.dispatch('updateMeetupData', {
-      })
+      this.registerDialog = false
+      if (this.userIsRegistered) {
+        this.$store.dispatch('unregisterFromMeetup', this.meetup.id)
+      } else {
+        this.$store.dispatch('registerForMeetup', this.meetup.id)
+      }
     }
   }
 }
